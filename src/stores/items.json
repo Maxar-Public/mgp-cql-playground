@@ -1,0 +1,156 @@
+[
+  {
+    "title": "Catalog ID",
+    "description": "Only display a given image by its ID",
+    "filter": {
+      "field": "legacyIdentifier",
+      "examples": [
+        {
+          "label": "Example",
+          "snippet": "legacyIdentifier='1020010107DFF400'"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Date Range",
+    "description": "Show images within a date range",
+    "filter": {
+      "field": "acquisitionDate",
+      "examples": [
+        {
+          "label": "Example",
+          "snippet": "acquisitionDate BETWEEN '2022-08-15' AND '2024-08-15'"
+        },
+        {
+          "label": "Example",
+          "snippet": "acquisitionDate > '2022-08-15' AND acquisitionDate <'2024-08-15'"
+        }
+      ]
+    },
+    "sort": {
+      "text": "Sort by date",
+      "examples": [
+        {
+          "label": "Ascending Example",
+          "snippet": "acquisitionDate A"
+        },
+        {
+          "label": "Descending Example",
+          "snippet": "acquisitionDate D"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Feature ID",
+    "description": "Show images by their Feature ID. This is identifier used for the image's vector footprint.",
+    "filter": {
+      "field": "featureId",
+      "examples": [
+        {
+          "label": "Example",
+          "snippet": "featureId='99cdc53d-bba1-8eca-e19a-f25ddc4d540d'"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Ground Sample Distance",
+    "description": "Filter images by ground sample distance in meters (pixel resolution).",
+    "filter": {
+      "field": "groundSampleDistance",
+      "examples": [
+        {
+          "label": "Example",
+          "snippet": "groundSampleDistance > 0.7 AND groundSampleDistance < 1.0"
+        },
+        {
+          "label": "Example",
+          "snippet": "groundSampleDistance BETWEEN 0.7 AND 1.0"
+        }
+      ]
+    },
+    "sort": {
+      "text": "Sort by groundSampleDistance",
+      "examples": [
+        {
+          "label": "Ascending Example",
+          "snippet": "groundSampleDistance A"
+        },
+        {
+          "label": "Descending Example",
+          "snippet": "groundSampleDistance D"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Satellite Name",
+    "description": "Show images from a given satellite. Values are WV01, WV02, WV03, WV03_VNIR, WV03_SWIR, GE01, QB02, LG01, LG02",
+    "filter": {
+      "field": "source",
+      "examples": [
+        {
+          "label": "Single Example",
+          "snippet": "source = 'WV01'"
+        },
+        {
+          "label": "Multiple Example 1",
+          "snippet": "source IN ('WV03_VNIR', 'LG01')"
+        },
+        {
+          "label": "Multiple Example 2",
+          "snippet": "source = 'WV03_VNIR' AND source = 'LG01'"
+        },
+        {
+          "label": "Matching Example",
+          "snippet": "source LIKE 'WV%'"
+        },
+        {
+          "label": "Excluding Example",
+          "snippet": "NOT (source = 'GE01')"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Cloud Cover Percent",
+    "description": "Filter images by how much they are covered by clouds.",
+    "filter": {
+      "field": "cloudCover",
+      "examples": [
+        {
+          "label": "Example",
+          "snippet": "cloudCover < 20"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Off-nadir Angle",
+    "description": "Filter images by off-nadir angle. Lower values point straighter down.",
+    "filter": {
+      "field": "offNadirAngle",
+      "examples": [
+        {
+          "label": "Example",
+          "snippet": "offNadirAngle < 10"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Sun Angle",
+    "description": "Filter images by sun angle.",
+    "filter": {
+      "field": "sunAngle",
+      "examples": [
+        {
+          "label": "Example",
+          "snippet": "sunElevation > 60"
+        }
+      ]
+    }
+  }
+]
