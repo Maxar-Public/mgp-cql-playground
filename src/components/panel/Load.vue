@@ -21,8 +21,8 @@ const load = async () => {
     return;
   }
 
-  const api_url: string = import.meta.env.VITE_API_URL;
-  const myKey: string = import.meta.env.VITE_MY_KEY;
+  const api_url: string = appStore.apiURL;
+  const myKey: string = appStore.apiKey;
 
   appStore.initializeWmsLayer(map, `${api_url}streaming/v1/ogc/wms?`, {
       version: "1.3.0",

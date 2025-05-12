@@ -18,6 +18,7 @@ export const useAppStore = defineStore("app", {
     wfsResults: [] as any[],
     apiKeyExists: false,
     apiKey: '',
+    apiURL: 'https://api.maxar.com/',
     map: null as L.Map | null,
     wmsUrl: "",
     isCopyPopupVisible: false,

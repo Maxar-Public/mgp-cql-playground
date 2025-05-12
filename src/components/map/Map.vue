@@ -31,8 +31,7 @@ onMounted(() => {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
-  const api_url: string = import.meta.env.VITE_API_URL;
-  const myKey: string = import.meta.env.VITE_MY_KEY;
+  const api_url: string = appStore.apiURL;
 
   // Point Marker
   const pointMarkerLayer = L.layerGroup().addTo(map);
@@ -100,7 +99,7 @@ onMounted(() => {
       `&format=image/vnd.jpeg-png` +
       `&transparent=true` +
       `&version=1.3.0` +
-      `&maxar_api_key=${myKey}` +
+      `&maxar_api_key=${appStore.apiKey}` +
       `&width=512` +
       `&height=512` +
       `&crs=EPSG:3857` +
@@ -154,8 +153,8 @@ onMounted(() => {
     // Construct bbox string in EPSG:3857 coordinates
     bbox = `${sw.x},${sw.y},${ne.x},${ne.y}`;
 
-    const api_url: string = import.meta.env.VITE_API_URL;
-    const myKey: string = import.meta.env.VITE_MY_KEY;
+    const api_url: string = appStore.apiURL;
+    const myKey: string = appStore.apiKey;
 
     let cqlFilter = `BBOX(featureGeometry,${bbox},'EPSG:3857')`;
 
@@ -206,6 +205,9 @@ onMounted(() => {
     generateUrl();
   },{ immediate: true, deep: true });
   watch(() => appStore.validSortBy, () => {
+    generateUrl();
+  },{ immediate: true, deep: true });
+  watch(() => appStore.apiKey, () => {
     generateUrl();
   },{ immediate: true, deep: true });
 });
